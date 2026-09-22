@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXtracty — Private, Local-First Web Content Extractor</title>
+  <meta name="description" content="Official documentation, privacy policy, and support portal for EXtracty browser extension. Local-first, zero tracking, optional BYOK AI.">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --accent: #38bdf8;
+      --accent-hover: #0ea5e9;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 16px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lead {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 32px auto;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .lang-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .btn-lang {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+    }
+    .btn-lang.active {
+      background-color: var(--accent);
+      color: #090d16;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: var(--accent);
+      color: #090d16;
+    }
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+    }
+    .btn-secondary {
+      background-color: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .card-icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .highlight-banner {
+      background: rgba(16, 185, 129, 0.05);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .highlight-banner h2 {
+      font-size: 20px;
+      color: var(--success);
+      margin-bottom: 8px;
+    }
+    .highlight-banner p {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge" data-en="Official Portal &bull; v1.0.0" data-it="Portale ufficiale &bull; v1.0.0">Official Portal &bull; v1.0.0</div>
+      <h1>EXtracty Browser Extension</h1>
+      <p class="lead" data-en="Smart, local-first web content extraction with offline OCR, session staging, multiple export formats, and optional privacy-centric Bring-Your-Own-Key AI." data-it="Estrazione intelligente di contenuti web in locale, con OCR offline, area di lavoro di sessione, vari formati di esportazione e IA BYOK opzionale progettata per la privacy.">Smart, local-first web content extraction with offline OCR, session staging, multiple export formats, and optional privacy-centric Bring-Your-Own-Key AI.</p>
+
+      <div class="lang-switcher" aria-label="Language selector">
+        <button id="btn-en" class="btn-lang active" type="button" onclick="setLang('en')">English</button>
+        <button id="btn-it" class="btn-lang" type="button" onclick="setLang('it')">Italiano</button>
+      </div>
+      
+      <div class="nav-buttons">
+        <a href="./privacy/" class="btn btn-primary" data-en="Privacy Policy" data-it="Informativa sulla privacy">Privacy Policy</a>
+        <a href="https://github.com/Miroslaw-34/EXtracty/issues" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-en="Support & Issues Tracker" data-it="Assistenza e segnalazioni">Support & Issues Tracker</a>
+      </div>
+    </header>
+
+    <div class="highlight-banner">
+      <h2 data-en="🛡️ Local-First & Zero-Tracking Architecture" data-it="🛡️ Architettura locale e senza tracciamento">🛡️ Local-First & Zero-Tracking Architecture</h2>
+      <p data-en="EXtracty has no proprietary backend servers, no analytics trackers, and no telemetry. All web page parsing, OCR recognition, and document assembly occur entirely inside your local browser sandbox." data-it="EXtracty non usa server proprietari, strumenti di analisi o telemetria. L'analisi delle pagine web, il riconoscimento OCR e la composizione dei documenti avvengono interamente nel browser locale.">EXtracty has no proprietary backend servers, no analytics trackers, and no telemetry. All web page parsing, OCR recognition, and document assembly occur entirely inside your local browser sandbox.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3 data-en="Three Extraction Modes" data-it="Tre modalità di estrazione">Three Extraction Modes</h3>
+        <p data-en="Choose between Heuristic Auto-Extraction for whole articles, Point-and-Click Inspector for granular elements, or Area Box Selection for visual snapshots and OCR." data-it="Scegli l'estrazione automatica euristica per articoli completi, l'Inspector punta e clicca per singoli elementi o la selezione di un'area per istantanee visive e OCR.">Choose between Heuristic Auto-Extraction for whole articles, Point-and-Click Inspector for granular elements, or Area Box Selection for visual snapshots and OCR.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔤</div>
+        <h3 data-en="Offline Multilingual OCR" data-it="OCR multilingue offline">Offline Multilingual OCR</h3>
+        <p data-en="Optical Character Recognition is executed 100% client-side via bundled WebAssembly Tesseract. Additional languages download strictly as verified static data files." data-it="Il riconoscimento ottico dei caratteri viene eseguito al 100% sul dispositivo tramite Tesseract WebAssembly incluso. Le lingue aggiuntive vengono scaricate esclusivamente come file di dati statici verificati.">Optical Character Recognition is executed 100% client-side via bundled WebAssembly Tesseract. Additional languages download strictly as verified static data files.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h3 data-en="Encrypted BYOK AI" data-it="IA BYOK cifrata">Encrypted BYOK AI</h3>
+        <p data-en="Optional AI operations (Gemini / OpenRouter) require explicit prior informed consent. Your API keys are encrypted at rest with AES-GCM 256-bit and a non-exportable key stored locally by the extension." data-it="Le operazioni IA facoltative (Gemini / OpenRouter) richiedono un consenso informato esplicito e preventivo. Le chiavi API sono cifrate a riposo con AES-GCM a 256 bit e una chiave non esportabile conservata localmente dall'estensione.">Optional AI operations (Gemini / OpenRouter) require explicit prior informed consent. Your API keys are encrypted at rest with AES-GCM 256-bit and a non-exportable key stored locally by the extension.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">💾</div>
+        <h3 data-en="Flexible Export Formats" data-it="Formati di esportazione flessibili">Flexible Export Formats</h3>
+        <p data-en="Export your assembled document instantly to Markdown (.md), Plain Text (.txt), CSV spreadsheet (.csv), Microsoft Word (.docx), or Adobe PDF (.pdf)." data-it="Esporta immediatamente il documento composto in Markdown (.md), testo semplice (.txt), foglio CSV (.csv), Microsoft Word (.docx) o Adobe PDF (.pdf).">Export your assembled document instantly to Markdown (.md), Plain Text (.txt), CSV spreadsheet (.csv), Microsoft Word (.docx), or Adobe PDF (.pdf).</p>
+      </div>
+    </div>
+
+    <footer>
+      <span data-en="&copy; 2026 Miroslaw_34. All rights reserved. &bull;" data-it="&copy; 2026 Miroslaw_34. Tutti i diritti riservati. &bull;">&copy; 2026 Miroslaw_34. All rights reserved. &bull;</span> <a href="./privacy/" data-en="Privacy Policy" data-it="Informativa sulla privacy">Privacy Policy</a> &bull; <a href="https://github.com/Miroslaw-34/EXtracty/issues" data-en="Support" data-it="Assistenza">Support</a>
+    </footer>
+  </div>
+  <script>
+    const pageCopy = {
+      en: {
+        title: 'EXtracty — Private, Local-First Web Content Extractor',
+        description: 'Official documentation, privacy policy, and support portal for EXtracty browser extension. Local-first, zero tracking, optional BYOK AI.'
+      },
+      it: {
+        title: 'EXtracty — Estrattore di contenuti web locale e privato',
+        description: 'Documentazione ufficiale, informativa sulla privacy e portale di assistenza per l’estensione EXtracty. Elaborazione locale, nessun tracciamento e IA BYOK opzionale.'
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.title = pageCopy[lang].title;
+      document.querySelector('meta[name="description"]').content = pageCopy[lang].description;
+      document.querySelectorAll('[data-en][data-it]').forEach((element) => {
+        element.innerHTML = element.dataset[lang];
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+    }
+
+    if (navigator.language && navigator.language.toLowerCase().startsWith('it')) {
+      setLang('it');
+    }
+  </script>
+</body>
+</html>
